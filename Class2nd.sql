@@ -1,7 +1,6 @@
 --What is an Index?
 
 An index is a database structure that improves the speed of data retrieval operations on a table.
-
 Just like a book index helps you find a topic quickly, a database index helps locate rows faster.
 
 -- Why do we use Indexes?
