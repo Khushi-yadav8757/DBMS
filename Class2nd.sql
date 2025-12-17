@@ -31,19 +31,17 @@ CREATE UNIQUE INDEX idx_email
 ON users(email);
 
 3️⃣ Composite Index
-
 Index created on multiple columns
-
+  
 CREATE INDEX idx_name_age
 ON employee(name, age);
 
 
-✔ Useful for queries like:
+-- Useful for queries like:
 
 WHERE name = 'Amit' AND age = 25;
 
 4️⃣ Clustered Index
-
 Determines the physical order of data in a table
 
 Only one clustered index per table
