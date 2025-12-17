@@ -1,30 +1,24 @@
-What is an Index?
+--What is an Index?
 
 An index is a database structure that improves the speed of data retrieval operations on a table.
 
 Just like a book index helps you find a topic quickly, a database index helps locate rows faster.
 
-🔹 Why do we use Indexes?
+-- Why do we use Indexes?
 
 Faster SELECT queries
-
 Improves performance of WHERE, JOIN, ORDER BY
-
 Very useful for large tables
 
-⚠️ Disadvantages:
+-- Disadvantages:
 
 Slower INSERT, UPDATE, DELETE
-
 Requires extra storage
 
-🔹 Types of Indexes
+-- Types of Indexes
 1️⃣ Primary Index
-
 Automatically created
-
 Applied on Primary Key
-
 Values are unique and not null
 
 CREATE TABLE student (
@@ -33,9 +27,7 @@ CREATE TABLE student (
 );
 
 2️⃣ Unique Index
-
 Ensures all values in a column are unique
-
 CREATE UNIQUE INDEX idx_email
 ON users(email);
 
