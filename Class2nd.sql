@@ -43,17 +43,13 @@ WHERE name = 'Amit' AND age = 25;
 
 4️⃣ Clustered Index
 Determines the physical order of data in a table
-
 Only one clustered index per table
-
 Usually created on primary key
 
 5️⃣ Non-Clustered Index
 
 Does not change physical order
-
 Stored separately from table data
-
 Multiple non-clustered indexes allowed
 
 🔹 Clustered vs Non-Clustered Index
