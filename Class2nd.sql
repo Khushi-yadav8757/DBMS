@@ -52,28 +52,25 @@ Does not change physical order
 Stored separately from table data
 Multiple non-clustered indexes allowed
 
-🔹 Clustered vs Non-Clustered Index
+-- Clustered vs Non-Clustered Index
 Feature	Clustered Index	Non-Clustered Index
 Physical order	Yes	No
 Number allowed	One	Multiple
 Speed	Faster	Slightly slower
+  
 Example	Primary key	Name, Email
-🔹 When NOT to use an Index?
 
-Very small tables
-
+  
+-- When NOT to use an Index?
+Very small table
 Columns with low distinct values (e.g. gender)
-
 Tables with frequent inserts/updates
 
-🔹 Why do Indexes slow down INSERT operations?
-
+-- Why do Indexes slow down INSERT operations?
 Because every insert/update requires the index to be updated as well.
 
-🔹 What is a B-Tree Index?
+-- What is a B-Tree Index?
 
 Most commonly used index type
-
 Uses balanced tree structure
-
 Search time complexity: O(log n)
