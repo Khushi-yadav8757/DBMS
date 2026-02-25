@@ -5,3 +5,4 @@ WHERE id NOT IN (
     FROM employee
     GROUP BY name
 );
+
