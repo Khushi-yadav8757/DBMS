@@ -67,9 +67,8 @@ Tables with frequent inserts/updates
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Why do Indexes slow down INSERT operations?
 Because every insert/update requires the index to be updated as well.
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------
 -- What is a B-Tree Index?
-
 Most commonly used index type
 Uses balanced tree structure.   
 Search time complexity: O(log n)
