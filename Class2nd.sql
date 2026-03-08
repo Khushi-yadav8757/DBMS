@@ -64,7 +64,7 @@ Example	Primary key	Name, Email
 Very small table
 Columns with low distinct values (e.g. gender)
 Tables with frequent inserts/updates
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Why do Indexes slow down INSERT operations?
 Because every insert/update requires the index to be updated as well.
 
