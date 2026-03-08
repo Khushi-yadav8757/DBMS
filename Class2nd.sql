@@ -12,7 +12,7 @@ Very useful for large tables
 -- Disadvantages:
 Slower INSERT, UPDATE, DELETE
 Requires extra storage
-
+------------------------------------------------------------------------------------------------------------------------------------------
 -- Types of Indexes
 1️⃣ Primary Index
 Automatically created
@@ -35,7 +35,7 @@ Index created on multiple columns
 CREATE INDEX idx_name_age
 ON employee(name, age);
 
-----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------
 -- Useful for queries like:
 
 WHERE name = 'Amit' AND age = 25;
@@ -44,13 +44,13 @@ WHERE name = 'Amit' AND age = 25;
 Determines the physical order of data in a table
 Only one clustered index per table
 Usually created on primary key
-----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------
 5️⃣ Non-Clustered Index
 
 Does not change physical order
 Stored separately from table data
 Multiple non-clustered indexes allowed
------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Clustered vs Non-Clustered Index
 Feature	Clustered Index	Non-Clustered Index
 Physical order	Yes	No
