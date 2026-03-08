@@ -10,7 +10,6 @@ Improves performance of WHERE, JOIN, ORDER BY
 Very useful for large tables
 
 -- Disadvantages:
-
 Slower INSERT, UPDATE, DELETE
 Requires extra storage
 
