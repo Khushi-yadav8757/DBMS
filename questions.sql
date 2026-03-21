@@ -4,11 +4,8 @@ Language to interact with database.
 15. Types of SQL commands?
 
 DDL → CREATE, ALTER
-
 DML → INSERT, UPDATE
-
 DCL → GRANT
-
 TCL → COMMIT
 
 16. Difference between WHERE and HAVING?
