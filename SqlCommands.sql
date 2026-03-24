@@ -1,5 +1,4 @@
 --What are the types of SQL commands?
-
 Answer:
 
 DDL (Data Definition Language) – CREATE, ALTER, DROP
