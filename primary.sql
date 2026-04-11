@@ -1,6 +1,6 @@
 6. What is a Primary Key?
 Unique + NOT NULL → identifies each row.
-
+ 
 7. What is a Foreign Key?
 Links one table to another.
  
