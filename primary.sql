@@ -9,6 +9,6 @@ All possible keys that can be primary key.
 
 9. What is Super Key?
 Set of attributes that uniquely identify rows.
-
+ 
 10. What is Composite Key?
 Combination of multiple columns.
