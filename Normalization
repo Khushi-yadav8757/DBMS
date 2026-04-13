@@ -1,10 +1,91 @@
-What is Normalization?
+🔥 What is Normalization in SQL?
 
-Answer:
-Normalization is the process of organizing data to reduce redundancy and improve data integrity.
+Answer (Interview Style):
+Normalization is the process of organizing data in a database to reduce redundancy (duplicate data) and improve data integrity (accuracy & consistency).
 
-Types:
-1NF, 2NF, 3NF
+The main goal is to divide large tables into smaller, related tables and link them using keys.
 
-👉 Example:
-Instead of storing repeated department names, create a separate table.
+🎯 Why do we use Normalization?
+To remove duplicate data
+To avoid data anomalies (insert, update, delete issues)
+To improve data consistency
+To make database efficient and structured
+⚠️ Problem Without Normalization (Example)
+Unnormalized Table:
+Student	Course	Instructor
+Khushi	DBMS	Amit
+Khushi	SQL	Rahul
+
+👉 Problem:
+
+Student name repeated
+Difficult to update
+Redundant data
+✅ After Normalization
+Table 1: Students
+StudentID	Name
+1	Khushi
+Table 2: Courses
+CourseID	Course
+101	DBMS
+102	SQL
+Table 3: Enrollment
+StudentID	CourseID
+
+👉 Now:
+
+No repetition
+Clean structure
+Easy to manage
+🔹 Types of Normalization (Normal Forms)
+1️⃣ First Normal Form (1NF)
+
+Rule:
+
+No repeating groups
+Each column should have atomic (single) values
+
+❌ Wrong:
+
+Name	Subjects
+A	Math, Sci
+
+✅ Correct:
+
+Name	Subject
+A	Math
+A	Sci
+2️⃣ Second Normal Form (2NF)
+
+Rule:
+
+Must be in 1NF
+Remove partial dependency
+
+👉 Means: Non-key attributes must depend on the whole primary key
+
+3️⃣ Third Normal Form (3NF)
+
+Rule:
+
+Must be in 2NF
+Remove transitive dependency
+
+👉 Means:
+Non-key column should not depend on another non-key column
+
+🧠 Simple Way to Explain in Interview
+
+👉 You can say:
+
+"Normalization is used to break a large table into smaller tables to remove redundancy and ensure data consistency. It follows rules like 1NF, 2NF, and 3NF to structure the database efficiently."
+
+⚡ Real-Life Example
+
+Think of a college database:
+
+Students table
+Courses table
+Enrollment table
+
+Instead of storing everything in one table, we split it → this is normalization
