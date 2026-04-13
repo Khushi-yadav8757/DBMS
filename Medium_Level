@@ -50,13 +50,18 @@ WHERE id IN (
 👉 Keeps first, deletes rest.
 
 🔹 7. Employees who never logged in
+
 SELECT * FROM employees
 WHERE id NOT IN (SELECT emp_id FROM logins);
+
 🔹 8. Highest salary per department
+
 SELECT department, MAX(salary)
 FROM employees
 GROUP BY department;
+
 🔹 9. Second highest per department
+
 SELECT department, salary
 FROM (
   SELECT department, salary,
@@ -64,54 +69,79 @@ FROM (
   FROM employees
 ) t
 WHERE rnk = 2;
+
 🔹 10. Common records
+
 SELECT * FROM table1
 INTERSECT
 SELECT * FROM table2;
+
 🔹 11. Unmatched records
+
 SELECT a.*
 FROM table1 a
 LEFT JOIN table2 b ON a.id = b.id
 WHERE b.id IS NULL;
+
 🔹 12. Self join (manager)
+
 SELECT e.name, m.name AS manager
 FROM employees e
 JOIN employees m
 ON e.manager_id = m.id;
+
 🔹 13. Same manager employees
+
 SELECT manager_id, COUNT(*)
 FROM employees
 GROUP BY manager_id;
+
 🔹 14. Same salary employees
+
 SELECT salary, COUNT(*)
 FROM employees
 GROUP BY salary
 HAVING COUNT(*) > 1;
+
 🔹 15. Date difference
+
 SELECT DATEDIFF(end_date, start_date) FROM projects;
+
 🔹 16. Running total
+
 SELECT salary,
 SUM(salary) OVER(ORDER BY id) AS running_total
 FROM employees;
+
 🔹 17. RANK()
+
 SELECT name, RANK() OVER(ORDER BY salary DESC) FROM employees;
+
 🔹 18. DENSE_RANK()
+
 SELECT name, DENSE_RANK() OVER(ORDER BY salary DESC) FROM employees;
+
 🔹 19. Top N per group
+
 SELECT * FROM (
   SELECT *, ROW_NUMBER() OVER(PARTITION BY dept ORDER BY salary DESC) rn
   FROM employees
 ) t WHERE rn <= 3;
+
 🔹 20. Last record per group
+
 SELECT * FROM (
   SELECT *, ROW_NUMBER() OVER(PARTITION BY dept ORDER BY id DESC) rn
   FROM employees
 ) t WHERE rn = 1;
+
 🔹 21. First record per group
+
 SELECT * FROM (
   SELECT *, ROW_NUMBER() OVER(PARTITION BY dept ORDER BY id) rn
   FROM employees
 ) t WHERE rn = 1;
+
 🔹 22. Pivot (basic idea)
 
 👉 Convert rows into columns using CASE
@@ -119,43 +149,59 @@ SELECT * FROM (
 SELECT
 SUM(CASE WHEN dept='HR' THEN salary END) HR
 FROM employees;
+
 🔹 23. Unpivot
 
 👉 Convert columns into rows (DB-specific)
 
 🔹 24. Cumulative sum
+
 SELECT SUM(salary) OVER(ORDER BY id) FROM employees;
+
 🔹 25. Percentage
+
 SELECT salary,
 salary * 100.0 / SUM(salary) OVER() AS percent
 FROM employees;
+
 🔹 26. Median salary
+
 SELECT PERCENTILE_CONT(0.5)
 WITHIN GROUP (ORDER BY salary)
 FROM employees;
+
 🔹 27. Mode
+
 SELECT salary
 FROM employees
 GROUP BY salary
 ORDER BY COUNT(*) DESC
 LIMIT 1;
+
 🔹 28. Last 30 days employees
+
 SELECT * FROM employees
 WHERE hire_date >= CURRENT_DATE - INTERVAL 30 DAY;
+
 🔹 29. EXISTS
+
 SELECT * FROM employees e
 WHERE EXISTS (
   SELECT 1 FROM orders o WHERE o.emp_id = e.id
 );
+
 🔹 30. NOT EXISTS
+
 SELECT * FROM employees e
 WHERE NOT EXISTS (
   SELECT 1 FROM orders o WHERE o.emp_id = e.id
 );
+
 🔹 31. Present in one not another
 SELECT * FROM table1
 EXCEPT
 SELECT * FROM table2;
+
 🔹 32. Compare two tables
 
 👉 Use JOIN or EXCEPT
@@ -163,11 +209,13 @@ SELECT * FROM table2;
 🔹 33. Duplicate using window
 SELECT *, COUNT(*) OVER(PARTITION BY name) cnt
 FROM employees;
+
 🔹 34. Remove duplicates (latest)
 DELETE FROM employees
 WHERE id NOT IN (
   SELECT MAX(id) FROM employees GROUP BY name
 );
+
 🔹 35. Consecutive records
 
 👉 Use ROW_NUMBER trick
@@ -179,62 +227,72 @@ WHERE id NOT IN (
 🔹 37. Increasing salary trend
 SELECT * FROM employees
 WHERE salary > LAG(salary) OVER(ORDER BY id);
+
 🔹 38. Inactive users
 SELECT * FROM users
 WHERE last_login < CURRENT_DATE - INTERVAL 30 DAY;
+
 🔹 39. Busiest day
 SELECT date, COUNT(*)
 FROM transactions
 GROUP BY date
 ORDER BY COUNT(*) DESC
 LIMIT 1;
+
 🔹 40. Join 3 tables
 SELECT *
 FROM a
 JOIN b ON a.id=b.id
 JOIN c ON b.id=c.id;
+
 🔹 41. Recursive query
 
 👉 Used for hierarchy (advanced)
-
 🔹 42. Hierarchical data
-
 👉 Use recursive CTE
-
 🔹 43. Dept highest avg salary
+
 SELECT department
 FROM employees
 GROUP BY department
 ORDER BY AVG(salary) DESC
 LIMIT 1;
+
 🔹 44. Above dept avg
+
 SELECT * FROM employees e
 WHERE salary > (
   SELECT AVG(salary)
   FROM employees
   WHERE department = e.department
 );
-🔹 45. Rows → columns
 
+🔹 45. Rows → columns
 👉 Use CASE or PIVOT
 
 🔹 46. Salary difference
+
 SELECT name,
 salary - LAG(salary) OVER(ORDER BY id) diff
 FROM employees;
+
 🔹 47. Moving average
+
 SELECT AVG(salary) OVER(
   ORDER BY id ROWS BETWEEN 2 PRECEDING AND CURRENT ROW
 )
 FROM employees;
 🔹 48. Top-selling product
+
 SELECT product_id, COUNT(*)
 FROM sales
 GROUP BY product_id
 ORDER BY COUNT(*) DESC
 LIMIT 1;
+
 🔹 49. CROSS JOIN
 SELECT * FROM a CROSS JOIN b;
+
 🔹 50. UNION vs UNION ALL
 SELECT name FROM a
 UNION
