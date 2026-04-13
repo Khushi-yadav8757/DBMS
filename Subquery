@@ -1,0 +1,10 @@
+What is a Subquery?
+
+Answer:
+A query inside another query.
+
+SELECT name
+FROM employees
+WHERE salary > (SELECT AVG(salary) FROM employees);
+
+👉 Used when result depends on another query.
