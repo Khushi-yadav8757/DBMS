@@ -1,0 +1,72 @@
+🔥 What is ACID Property in SQL?
+
+Answer (Interview Style):
+ACID is a set of four properties that ensure reliable and consistent database transactions.
+
+It is mainly used in DBMS (Database Management Systems) to guarantee that data remains accurate even in case of failures like system crash, power loss, etc.
+
+🧩 ACID stands for:
+1️⃣ Atomicity (All or Nothing)
+
+Meaning:
+A transaction is either fully completed or not executed at all.
+
+👉 If any part fails → entire transaction is rolled back
+
+Example:
+Bank transfer:
+
+₹1000 deducted from Account A
+₹1000 added to Account B
+
+If adding fails → deduction is also cancelled
+
+2️⃣ Consistency (Valid Data)
+
+Meaning:
+After a transaction, the database must remain in a valid state.
+
+👉 Rules, constraints, and relationships must be maintained
+
+Example:
+If balance cannot be negative, the transaction should not allow it.
+
+3️⃣ Isolation (No Interference)
+
+Meaning:
+Multiple transactions should not affect each other.
+
+👉 Each transaction works as if it is the only one running
+
+Example:
+Two people booking the last seat:
+
+Only one should succeed
+No conflict or incorrect data
+4️⃣ Durability (Permanent Data)
+
+Meaning:
+Once a transaction is committed, it is permanently saved, even if system crashes.
+
+👉 Data is stored safely (logs, backups)
+
+🎯 Simple Way to Explain in Interview
+
+👉 You can say:
+
+"ACID properties ensure reliable transactions in a database. Atomicity ensures all-or-nothing execution, Consistency keeps data valid, Isolation prevents conflicts between transactions, and Durability ensures data is permanently saved after commit."
+
+🔥 Real-Life Example (Best for Interview)
+
+👉 ATM Transaction:
+
+Withdraw money
+Balance updated
+
+If system crashes after withdrawal → system should still remember transaction (Durability)
+
+⚠️ Why ACID is Important?
+Prevents data loss
+Ensures accuracy
+Handles system failures
+Maintains database reliability
