@@ -1,0 +1,224 @@
+🟢 EASY SQL (50 Answers)
+
+1. Select all columns
+SELECT * FROM employees;
+
+👉 Fetches all data from table.
+
+2. Select specific columns
+SELECT name, salary FROM employees;
+
+👉 Fetches only required columns.
+
+3. Filter rows using WHERE
+SELECT * FROM employees WHERE department = 'HR';
+
+👉 Filters rows based on condition.
+
+4. Salary > 50000
+SELECT * FROM employees WHERE salary > 50000;
+
+5. Sort ascending
+SELECT * FROM employees ORDER BY salary ASC;
+
+6. Sort descending
+SELECT * FROM employees ORDER BY salary DESC;
+
+7. DISTINCT
+SELECT DISTINCT department FROM employees;
+
+--------------------------------------------------------------------------------------------------------------------
+
+👉 Removes duplicates.
+
+8. Count rows
+SELECT COUNT(*) FROM employees;
+
+9. Max salary
+SELECT MAX(salary) FROM employees;
+
+10. Min salary
+SELECT MIN(salary) FROM employees;
+
+11. Average salary
+SELECT AVG(salary) FROM employees;
+
+12. LIKE
+SELECT * FROM employees WHERE name LIKE 'A%';
+
+------------------------------------------------------------------------------------------------------------------------
+
+👉 Pattern matching.
+
+13. Names starting with A
+SELECT * FROM employees WHERE name LIKE 'A%';
+
+14. Names ending with n
+SELECT * FROM employees WHERE name LIKE '%n';
+  
+15. IN operator
+SELECT * FROM employees WHERE department IN ('HR','IT');
+
+16. BETWEEN
+SELECT * FROM employees WHERE salary BETWEEN 30000 AND 60000;
+
+17. Count employees per department
+SELECT department, COUNT(*) FROM employees GROUP BY department;
+
+18. GROUP BY
+SELECT department FROM employees GROUP BY department;
+
+19. HAVING
+SELECT department, COUNT(*) 
+FROM employees 
+GROUP BY department 
+HAVING COUNT(*) > 2;
+
+
+20. Find duplicates
+SELECT name, COUNT(*) 
+FROM employees 
+GROUP BY name 
+HAVING COUNT(*) > 1;
+
+
+21. Delete duplicates
+DELETE FROM employees
+WHERE id NOT IN (
+  SELECT MIN(id) FROM employees GROUP BY name
+);
+
+
+22. Update salary
+UPDATE employees SET salary = 60000 WHERE id = 1;
+
+
+23. Add column
+ALTER TABLE employees ADD age INT;
+
+
+24. Rename column
+ALTER TABLE employees RENAME COLUMN name TO emp_name;
+
+
+25. Delete column
+ALTER TABLE employees DROP COLUMN age;
+
+
+26. Create table
+CREATE TABLE employees (
+  id INT,
+  name VARCHAR(50),
+  salary INT
+);
+
+
+27. Drop table
+DROP TABLE employees;
+
+
+28. Insert data
+INSERT INTO employees VALUES (1, 'Khushi', 50000);
+
+
+29. LIMIT
+SELECT * FROM employees LIMIT 5;
+
+
+30. Top 5 salaries
+SELECT * FROM employees ORDER BY salary DESC LIMIT 5;
+
+
+31. Second highest salary
+SELECT MAX(salary) 
+FROM employees 
+WHERE salary < (SELECT MAX(salary) FROM employees);
+
+
+32. NULL values
+SELECT * FROM employees WHERE salary IS NULL;
+
+
+33. Replace NULL
+SELECT COALESCE(salary, 0) FROM employees;
+
+
+34. CASE
+SELECT name,
+CASE 
+  WHEN salary > 50000 THEN 'High'
+  ELSE 'Low'
+END AS category
+FROM employees;
+
+
+35. Concatenate columns
+SELECT CONCAT(first_name, ' ', last_name) FROM employees;
+
+
+36. Current date
+SELECT CURRENT_DATE;
+37. Extract year
+SELECT EXTRACT(YEAR FROM hire_date) FROM employees;
+
+
+38. ORDER BY multiple columns
+SELECT * FROM employees ORDER BY department, salary DESC;
+
+
+39. Count distinct
+SELECT COUNT(DISTINCT department) FROM employees;
+
+
+40. Employees without department
+SELECT * FROM employees WHERE department IS NULL;
+
+
+41. INNER JOIN
+SELECT e.name, d.dept_name
+FROM employees e
+INNER JOIN departments d
+ON e.dept_id = d.id;
+
+
+42. LEFT JOIN
+SELECT e.name, d.dept_name
+FROM employees e
+LEFT JOIN departments d
+ON e.dept_id = d.id;
+
+
+43. RIGHT JOIN
+SELECT e.name, d.dept_name
+FROM employees e
+RIGHT JOIN departments d
+ON e.dept_id = d.id;
+
+
+44. Total salary per department
+SELECT department, SUM(salary)
+FROM employees
+GROUP BY department;
+
+
+45. Filter aggregated data
+SELECT department, SUM(salary)
+FROM employees
+GROUP BY department
+HAVING SUM(salary) > 100000;
+
+  
+46. Hired after date
+SELECT * FROM employees WHERE hire_date > '2023-01-01';
+
+47. Uppercase
+SELECT UPPER(name) FROM employees;
+
+48. Lowercase
+SELECT LOWER(name) FROM employees;
+
+49. Trim spaces
+SELECT TRIM(name) FROM employees;
+
+50. Round values
+SELECT ROUND(salary, 2) FROM employees;
