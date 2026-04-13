@@ -1,0 +1,10 @@
+What is Normalization?
+
+Answer:
+Normalization is the process of organizing data to reduce redundancy and improve data integrity.
+
+Types:
+1NF, 2NF, 3NF
+
+👉 Example:
+Instead of storing repeated department names, create a separate table.
