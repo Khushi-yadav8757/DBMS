@@ -1,0 +1,91 @@
+What is JOIN in SQL?
+
+Answer (Interview Style):
+JOIN is used to combine data from two or more tables based on a related column (usually a key).
+
+👉 It helps us retrieve meaningful data that is spread across multiple tables.
+
+🎯 Real-Life Example
+
+Suppose we have:
+
+Employees Table
+id	name	dept_id
+1	Khushi	101
+2	Aman	102
+Departments Table
+id	dept_name
+101	HR
+102	IT
+
+👉 To get employee name + department name → we use JOIN
+
+🔹 Types of JOIN
+1️⃣ INNER JOIN
+
+Definition:
+Returns only the rows where there is a match in both tables.
+
+SELECT e.name, d.dept_name
+FROM employees e
+INNER JOIN departments d
+ON e.dept_id = d.id;
+
+👉 Output:
+
+name	dept_name
+Khushi	HR
+Aman	IT
+2️⃣ LEFT JOIN (LEFT OUTER JOIN)
+
+Definition:
+Returns all rows from the left table + matched rows from the right table.
+
+SELECT e.name, d.dept_name
+FROM employees e
+LEFT JOIN departments d
+ON e.dept_id = d.id;
+
+👉 If no match → NULL
+
+3️⃣ RIGHT JOIN (RIGHT OUTER JOIN)
+
+Definition:
+Returns all rows from the right table + matched rows from left table.
+
+4️⃣ FULL JOIN (FULL OUTER JOIN)
+
+Definition:
+Returns all rows from both tables (matched + unmatched)
+
+5️⃣ SELF JOIN
+
+Definition:
+A table joins with itself.
+
+SELECT A.name, B.name
+FROM employees A, employees B
+WHERE A.manager_id = B.id;
+
+👉 Used for hierarchy (employee-manager)
+
+🔥 Difference Between INNER JOIN & LEFT JOIN
+INNER JOIN	LEFT JOIN
+Only matching rows	All left + matching
+Ignores NULL	Includes NULL
+🧠 When to Use Which JOIN?
+INNER JOIN → When you need only matching data
+LEFT JOIN → When you want all records (even if no match)
+RIGHT JOIN → Rarely used (same as LEFT but reversed)
+FULL JOIN → When you need complete data from both tables
+⚠️ Common Interview Mistakes
+
+❌ Forgetting ON condition
+❌ Confusing LEFT JOIN vs INNER JOIN
+❌ Not explaining real-world use
+
+🎯 Best Interview Answer (Short Version)
+
+👉 You can say:
+
+"JOIN is used to combine data from multiple tables based on a related column. Common types include INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL JOIN. INNER JOIN returns matching rows, while LEFT JOIN returns all records from the left table even if there is no match."
