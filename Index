@@ -1,7 +1,6 @@
 What is Index?
 Answer:
 An index improves query performance by allowing faster data retrieval.
-
  Works like a book index
 
 CREATE INDEX idx_name ON employees(name);
