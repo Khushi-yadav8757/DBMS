@@ -35,7 +35,9 @@ SELECT name, department, COUNT(*)
 FROM employees
 GROUP BY name, department
 HAVING COUNT(*) > 1;
+
 🔹 6. Delete duplicates using ROW_NUMBER()
+
 DELETE FROM employees
 WHERE id IN (
   SELECT id FROM (
