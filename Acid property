@@ -7,7 +7,6 @@ It is mainly used in DBMS (Database Management Systems) to guarantee that data r
 
 🧩 ACID stands for:
 1️⃣ Atomicity (All or Nothing)
-
 Meaning:
 A transaction is either fully completed or not executed at all.
 
