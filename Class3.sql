@@ -12,7 +12,6 @@ A → B ₹100 transfer
 1. Debit ₹100 from A
 2. Credit ₹100 to B
 
-
 Both steps must happen together.
 
 2️⃣ Transaction States
