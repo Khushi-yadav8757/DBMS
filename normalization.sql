@@ -1,6 +1,6 @@
 11. What is normalization?
 Process to remove redundancy and improve data integrity.
-  
+
 12. Types of Normal Forms?
 1NF → No repeating groups
 2NF → No partial dependency
