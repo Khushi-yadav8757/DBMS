@@ -2,7 +2,7 @@
 
 SQL (Structured Query Language) is a standard programming language used to store, retrieve, manipulate, and manage data in a relational database.
 
-👉 In simple words:
+ In simple words:
 SQL is used to talk to databases.
 
 🔹 Real-Life Example
