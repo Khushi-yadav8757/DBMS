@@ -1,6 +1,6 @@
 1. What is DBMS?
 A Database Management System is software used to store, manage, and retrieve data efficiently (e.g., MySQL, Oracle).
-
+  
 2. What is a database?
 A structured collection of data stored electronically.
 
