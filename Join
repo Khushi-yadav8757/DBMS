@@ -3,7 +3,7 @@ What is JOIN in SQL?
 Answer (Interview Style):
 JOIN is used to combine data from two or more tables based on a related column (usually a key).
 
-👉 It helps us retrieve meaningful data that is spread across multiple tables.
+ It helps us retrieve meaningful data that is spread across multiple tables.
 
  Real-Life Example
 
