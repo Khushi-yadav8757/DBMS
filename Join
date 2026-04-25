@@ -5,7 +5,7 @@ JOIN is used to combine data from two or more tables based on a related column (
 
 👉 It helps us retrieve meaningful data that is spread across multiple tables.
 
-🎯 Real-Life Example
+ Real-Life Example
 
 Suppose we have:
 
