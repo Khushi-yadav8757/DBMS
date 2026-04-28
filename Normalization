@@ -1,8 +1,8 @@
-🔥 What is Normalization in SQL?
+ What is Normalization in SQL?
 
 Answer :
-Normalization is the process of organizing data in a database to reduce redundancy (duplicate data) and improve data integrity (accuracy & consistency).
 
+Normalization is the process of organizing data in a database to reduce redundancy (duplicate data) and improve data integrity (accuracy & consistency).
 The main goal is to divide large tables into smaller, related tables and link them using keys.
 
 🎯 Why do we use Normalization?
