@@ -27,7 +27,7 @@ Normalization reduces redundancy and improves data consistency.
 
 10. What is 1NF?
 Each column contains atomic (single) values and no repeating groups.
-
+------------------------------------------------------------------------------------------------------
 11. What is 2NF?
 Table must be in 1NF and non-key attributes depend on the whole key.
 
@@ -57,7 +57,7 @@ Inner, Left, Right, Full, and Self Join.
 
 20. What are ACID properties?
 Atomicity, Consistency, Isolation, and Durability ensure reliable transactions.
-
+------------------------------------------------------------------------------------------------------------------
 21. What is a transaction?
 A transaction is a sequence of operations executed as a single unit.
 
