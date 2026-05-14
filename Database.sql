@@ -3,7 +3,7 @@ DBMS (Database Management System) is software used to create, store, manage, and
 
 2. What is RDBMS?
 RDBMS stores data in tables with rows and columns and maintains relationships using keys.
-
+  
 3. Difference between DBMS and RDBMS?
 DBMS stores data generally; RDBMS stores related data in tables and supports constraints.
 
