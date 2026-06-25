@@ -2,7 +2,6 @@
 
 1. Select all columns
 SELECT * FROM employees;
-
 👉 Fetches all data from table.
 
 2. Select specific columns
