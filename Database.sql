@@ -1,5 +1,6 @@
 1. What is DBMS?
 DBMS (Database Management System) is software used to create, store, manage, and retrieve data efficiently.
+  
 2. What is RDBMS?
 RDBMS stores data in tables with rows and columns and maintains relationships using keys.
   
