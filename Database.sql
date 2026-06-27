@@ -10,7 +10,7 @@ DBMS stores data generally; RDBMS stores related data in tables and supports con
 4. What is a primary key?
 A primary key uniquely identifies each record and cannot contain NULL values.
 
-5. What is a foreign key? 
+5. What is a foreign key?  
 A foreign key creates a relationship between two tables by referencing a primary key.
 
 6. What is a candidate key?
