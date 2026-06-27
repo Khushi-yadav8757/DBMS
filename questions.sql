@@ -9,7 +9,6 @@ DCL → GRANT
 TCL → COMMIT
   
 16. Difference between WHERE and HAVING?
-
 WHERE → before grouping
 HAVING → after grouping
 
