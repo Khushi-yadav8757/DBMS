@@ -3,7 +3,6 @@ A DBMS is a software system used to store, manage, update, retrieve, and secure 
   
 🔹 Why DBMS is Needed?
 Before DBMS, we used file systems, which had many problems:
-
 Data duplication
 No security
 No recovery
