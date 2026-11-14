@@ -9,7 +9,6 @@ No security
 No recovery
 Data inconsistency
 Slow access
-
   
 DBMS solves all these problems.
 🔹 Examples of DBMS:
